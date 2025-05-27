@@ -4197,12 +4197,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 7315454529027338551}
   _playerCamera: {fileID: 3581887490823345802}
-  runAcceleration: 50
+  runAcceleration: 35
   runSpeed: 4
-  sprintAcceleration: 0.25
-  sprintSpeed: 4
-  drag: 30
+  sprintAcceleration: 50
+  sprintSpeed: 7
+  drag: 15
+  gravity: 20
+  jumpSpeed: 1
   movingThreshold: 0.01
+  playerModelRotationSpeed: 10
+  rotateToTargetTime: 0.67
   lookSenseH: 0.1
   lookSenseV: 0.1
   lookLimitV: 70
@@ -4224,13 +4228,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.1
   m_MinMoveDistance: 0.00001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!114 &3766433859189938602
 MonoBehaviour:
   m_ObjectHideFlags: 0
