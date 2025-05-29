@@ -30,9 +30,9 @@ namespace Enemy
 
         private void Die()
         {
-            if (orbPrefab != null)
+            if (orbPrefab)
             {
-                print(dropPoint.position);
+                print("DROPU ORBE");
                 Instantiate(orbPrefab, dropPoint.position, Quaternion.identity);
             }
             OnDeath?.Invoke();

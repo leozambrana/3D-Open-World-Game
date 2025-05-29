@@ -33,6 +33,7 @@ namespace Enemy
                 _agent.isStopped = false;
                 _agent.SetDestination(player.position);
                 animator.SetFloat("Speed", _agent.velocity.magnitude);
+                print("agent velocity" +  _agent.velocity.magnitude);
                 animator.ResetTrigger("Attack");
             }
             else

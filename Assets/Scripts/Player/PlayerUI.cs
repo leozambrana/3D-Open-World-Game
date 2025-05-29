@@ -60,6 +60,7 @@ namespace Player
 
         public void Heal(int amount)
         {
+            print("HEALLING" + amount);
             _currentHealth += amount;
             _currentHealth = Mathf.Min(_currentHealth, maxHealth);
             UpdateHealthUI();

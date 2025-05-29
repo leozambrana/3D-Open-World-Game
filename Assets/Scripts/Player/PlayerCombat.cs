@@ -6,6 +6,7 @@ namespace Player
 {
     public class PlayerCombat : MonoBehaviour
     {
+        [Header("Attack Settings")]
         public Transform attackPoint;
         public float attackRange = 1f;
         public int attackDamage = 1;
