@@ -42,8 +42,6 @@ namespace Player
         
         private void Attack()
         {
-            Debug.Log("Soco!");
-
             // Detect enemies in range
             var hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 

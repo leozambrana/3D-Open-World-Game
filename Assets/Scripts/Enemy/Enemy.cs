@@ -7,6 +7,11 @@ namespace Enemy
     {
         public int health = 3;
         private int _currentHealth;
+        public System.Action OnDeath;
+        
+        [Header("Drop Settings")]
+        public GameObject orbPrefab;
+        public Transform dropPoint; 
 
         private void Start()
         {
@@ -15,9 +20,7 @@ namespace Enemy
 
         public void TakeDamage(int damage)
         {
-            print("TINHA QUE ENTRAR");
             _currentHealth -= damage;
-            Debug.Log("Inimigo levou dano! Vida restante: " + _currentHealth);
 
             if (_currentHealth <= 0)
             {
@@ -27,8 +30,14 @@ namespace Enemy
 
         private void Die()
         {
-            Debug.Log("Inimigo morreu!");
+            if (orbPrefab != null)
+            {
+                print(dropPoint.position);
+                Instantiate(orbPrefab, dropPoint.position, Quaternion.identity);
+            }
+            OnDeath?.Invoke();
             Destroy(gameObject);
+            
         }
     }
 }

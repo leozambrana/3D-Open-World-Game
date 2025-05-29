@@ -43,8 +43,6 @@ namespace Enemy
         // ReSharper disable Unity.PerformanceAnalysis
         private void Attack()
         {
-            Debug.Log("Inimigo atacou!");
-
             Collider[] hitPlayers = Physics.OverlapSphere(transform.position, attackRange, playerLayer);
 
             foreach (Collider player in hitPlayers)

@@ -1,4 +1,6 @@
+using Enemy;
 using Interface;
+using UI;
 using UnityEngine;
 using UnityEngine.UI; 
 
@@ -6,6 +8,10 @@ namespace Player
 {
     public class PlayerUI : MonoBehaviour, IDamageable
     {
+        [SerializeField] private GameOverUI gameOverUI;
+        [SerializeField] private EnemySpawner spawner;
+        [SerializeField] private PlayerCollector collector;
+        
         public int maxHealth = 100;
         private int _currentHealth;
 
@@ -35,6 +41,8 @@ namespace Player
         private void Die()
         {
             Debug.Log("Player has died!");
+            gameOverUI.Show(spawner.waveNumber - 1, collector.orbCount);
+            gameObject.SetActive(false);
             // TODO: Add death animation, disable controls, respawn, etc.
             // For example:
             // GetComponent<PlayerController>().enabled = false;
